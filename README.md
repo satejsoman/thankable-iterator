@@ -4,7 +4,7 @@ call `thankU()` before calling `next()`
 # use
 an iterator over a `Collection<E>` that throws an `UnthankedException` if you don't call `thankU()` before calling `next()`
 ```java
-ThankableIterator<Integer> it = ThankableIterator.of(IntStream.range(1, 10).iterator());
+ThankableIterator<Integer> it = ThankableIterator.of(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 it.thankU()
   .next();
 ```
