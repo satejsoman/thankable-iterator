@@ -2,7 +2,7 @@
 call `thankU()` before calling `next()`
 
 # use
-returns an iterator over a `Collection<E>` and throws an `UnthankedException` if you don't call `thankU()` before calling `next()`
+an iterator over a `Collection<E>` that throws an `UnthankedException` if you don't call `thankU()` before calling `next()`
 ```java
 ThankableIterator<Integer> it = ThankableIterator.of(IntStream.range(1, 10).iterator());
 it.thankU()
@@ -22,7 +22,7 @@ ThankableIterator.of(underlying, Teachers.PATIENCE);
 ```
 if the underlying iterator is blocking, uses `take()` to block until the next element is available. 
 
-note that this technically breaks the contract of `Iterator::next` since `Iterator` instances are eventually-consistent views of the underlying `Collection` (e.g. a blocking `next` implementation is usually a bad thing)
+note that this technically breaks the contract of `Iterator::next` since `Iterator` instances are eventually-consistent views of the underlying `Collection` (i.e. a blocking `next` implementation is usually a bad thing)
 ## pain
 ```java
 ThankableIterator.of(underlying, Teachers.PAIN);
